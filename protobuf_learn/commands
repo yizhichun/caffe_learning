@@ -1,0 +1,5 @@
+protoc -l=. --cpp_out=lm.helloworld.proto
+g++ lm.helloworld.proto writer.cpp -o writer `pkg-config --cflags --libs protobuf` -lpthread
+g++ lm.helloworld.proto reader.cpp -o reader `pkg-config --cflags --libs protobuf` -lpthread
+./writer
+./reader
